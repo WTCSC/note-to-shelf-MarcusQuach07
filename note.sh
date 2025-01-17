@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # File where notes are stored
-TXT = "test_note.sh"
+TXT="test_note.sh"
 
 # Function to add a note
 function add() {
     # first argument that will only appear in this function
-    local note = "$1"
+    local note="$1"
 
     # If note is empty then
-    if [[ -z "$note"]]; then
+    if [[ -z "$note" ]]; then
     # Print error message
         echo "Error: Note cannot be empty."
         #Exits saying error
@@ -17,7 +17,7 @@ function add() {
     # Ends if statement
     fi
     # Gets current time, date, and note to add to note.txt
-    local time = $(date + "%Y-%m-%d %H:%M:%S")
+    local time=$(date +"%Y-%m-%d %H:%M:%S")
     # Adds time,date, and note to the note txt file
     echo "$time - $note" >> "$TXT"
     #Successfully added note
@@ -37,9 +37,9 @@ function list() {
     cat "$TXT"
 }
 # Function to search notes
-function search() {|
+function search() {
     # Check if note.txt exists then
-    if [[ ! -f "TXT"]]; then
+    if [[ ! -f "$TXT" ]]; then
     # if it doesnt exists then error message occurs
         echo "Error: No notes found."
         #Exits with error
@@ -48,9 +48,9 @@ function search() {|
     fi
 
     # Gets the search word from the first argument
-    local search_word = "$1"
+    local search_word="$1"
     # Checks if search word exists
-    if [[ -z "$search_word"]]; then
+    if [[ -z "$search_word" ]]; then
     # If it doesnt exist then error message occurs
         echo "Error: Search word cannot be empty."
         #Exits with error
