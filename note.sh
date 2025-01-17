@@ -83,7 +83,13 @@ case "$1" in
     # Error for invalid commands
     *)
     # Echos invalid command and gives options
-        echo "Invalid command. Usage: $0 {add|list|search|clear} [arguments]"
+        echo "Try these
+1. add
+2. list
+3. search
+4. clear
+Numbers will not work"
+
         exit 1
         ;;
 esac
