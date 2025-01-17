@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # File where notes are stored
-TXT="test_note.sh"
+TXT="notes.txt"
 
 # Function to add a note
 function add() {
